@@ -13,6 +13,7 @@ function writeOrElse() {
 }
 
 function tracker(gracePeriod, wordInterval, numPeriods, maxPeriods) {
+  let textbox = document.getElementById("writing-box");
   if(numPeriods * wordInterval > countWords(textbox.value)) {
         alert("Write Faster!!!!");
         // more "punishments" can and will be added later on
