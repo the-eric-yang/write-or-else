@@ -37,3 +37,11 @@ function countWords(string) {
   }
   return numWords;
 }
+function countWordsChars() {
+  let wordSpan = document.getElementById("word-count");
+  let charSpan = document.getElementById("char-count");
+  let textbox = document.getElementById("writing-box");
+  wordSpan.value = countWords(textbox.value);
+  charSpan.value = textbox.value.length;
+  setTimeout(100, countWordsChars());
+}
