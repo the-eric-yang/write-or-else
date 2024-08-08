@@ -30,7 +30,7 @@ function tracker(gracePeriod, numPeriods, maxPeriods) {
 function countWords(string) {
   let wordArray = string.split(" ")
   let numWords = 0;
-  for(int i = 0; i < wordArray.length(); i++) {
+  for(let i = 0; i < wordArray.length(); i++) {
     if(wordArray[i] > 0) {
       numWords++;
     }
