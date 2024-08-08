@@ -6,9 +6,11 @@
     <link rel="stylesheet" href="style.css">
     <title>Write or Else</title>
 </head>
-<body>
+<body onload="writeOrElse();countWordsChars()">
     <h1>Write or Else</h1>
     <textarea id="writing-box" rows="37" cols="125"> </textarea>
+    <p><span id="word-count"></span> words</p>
+    <p><span id="char-count"></span> characters</p>
 </body>
   <script src="script.js"></script>
 </html>
