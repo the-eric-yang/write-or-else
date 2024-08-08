@@ -1,11 +1,11 @@
-function writeOrDie() {
+function writeOrElse() {
   const queries = new URLSearchParams(window.location.search);
   if(!(queries.has('words') && queries.has('target') && queries.has('grace'))) {
     document.location.index = "index.html";
   } else {
     let wordGoal = queries.get('words');
     let grace = queries.get('grace');
-    let numGracePeriods = (queries.get('target') * 60 / grace;
+    let numGracePeriods = (queries.get('target') * 60) / grace;
     let wordInterval = wordGoal / numGracePeriods);
     let textbox = document.getElementById("writing-box");
     setTimeout(1000 * grace, tracker(grace, 0, numGracePeriods));
