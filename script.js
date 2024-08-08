@@ -17,9 +17,9 @@ function tracker(gracePeriod, numPeriods, maxPeriods) {
         alert("Write Faster!!!!");
         // more "punishments" can and will be added later on
         if (numPeriods < maxPeriods) {
-          setTimeout(gracePeriod * 1000, tracker(gracePeriod, numPeriods + 1, maxPeriods);
+          setTimeout(gracePeriod * 1000, tracker(gracePeriod, numPeriods + 1, maxPeriods));
         } else {
-          setTimeout(gracePeriod * 1000, tracker(gracePeriod, maxPeriods, maxPeriods);
+          setTimeout(gracePeriod * 1000, tracker(gracePeriod, maxPeriods, maxPeriods));
         }
       }
   else if(countWords(textbox.value) > wordGoal)  {
