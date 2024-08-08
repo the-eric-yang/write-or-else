@@ -6,7 +6,7 @@ function writeOrElse() {
     let wordGoal = queries.get('words');
     let grace = queries.get('grace');
     let numGracePeriods = (queries.get('target') * 60) / grace;
-    let wordInterval = wordGoal / numGracePeriods);
+    let wordInterval = (wordGoal / numGracePeriods);
     let textbox = document.getElementById("writing-box");
     setTimeout(1000 * grace, tracker(grace, 0, numGracePeriods));
   }
