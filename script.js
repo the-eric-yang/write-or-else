@@ -8,18 +8,18 @@ function writeOrElse() {
     let numGracePeriods = (queries.get('target') * 60) / grace;
     let wordInterval = wordGoal / numGracePeriods;
     let textbox = document.getElementById("writing-box");
-    setTimeout(1000 * grace, tracker(grace, 0, numGracePeriods));
+    setTimeout(1000 * grace, tracker(grace, wordInterval, 0, numGracePeriods));
   }
 }
 
-function tracker(gracePeriod, numPeriods, maxPeriods) {
+function tracker(gracePeriod, wordInterval, numPeriods, maxPeriods) {
   if(numPeriods * wordInterval > countWords(textbox.value)) {
         alert("Write Faster!!!!");
         // more "punishments" can and will be added later on
         if (numPeriods < maxPeriods) {
-          setTimeout(gracePeriod * 1000, tracker(gracePeriod, numPeriods + 1, maxPeriods));
+          setTimeout(gracePeriod * 1000, tracker(gracePeriod, wordInterval, numPeriods + 1, maxPeriods));
         } else {
-          setTimeout(gracePeriod * 1000, tracker(gracePeriod, maxPeriods, maxPeriods));
+          setTimeout(gracePeriod * 1000, tracker(gracePeriod, wordInterval, maxPeriods, maxPeriods));
         }
       }
   else if(countWords(textbox.value) > wordGoal)  {
