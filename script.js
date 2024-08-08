@@ -37,6 +37,7 @@ function countWords(string) {
   }
   return numWords;
 }
+
 function countWordsChars() {
   let wordSpan = document.getElementById("word-count");
   let charSpan = document.getElementById("char-count");
