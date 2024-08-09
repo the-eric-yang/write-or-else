@@ -29,20 +29,13 @@ function tracker(gracePeriod, wordInterval, numPeriods, maxPeriods, wordGoal) {
 }
 
 function countWords(string) {
-  let wordArray = string.split(" ");
-  let numWords = 0;
-  for(let i = 0; i < wordArray.length; i++) {
-    if(wordArray[i] > 0) {
-      numWords++;
-    }
-  }
-  return numWords;
+  return string.split(" ").filter(w => w.length > 0).length;
 }
 
 function countWordsChars() {
   let wordSpan = document.getElementById("word-count");
   let charSpan = document.getElementById("char-count");
   let textbox = document.getElementById("writing-box");
-  wordSpan.value = countWords(textbox.value);
-  charSpan.value = textbox.value.length;
+  wordSpan.innerText = countWords(textbox.value);
+  charSpan.innerText = textbox.value.length;
 }
