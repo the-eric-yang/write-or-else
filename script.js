@@ -1,5 +1,9 @@
+let queries = new URLSearchParams(window.location.search);
+let checkNum = 0;
+let intervalId = 0;
+
 function writeOrElse() {
-  const queries = new URLSearchParams(window.location.search);
+  queries = new URLSearchParams(window.location.search);
   if(!(queries.has('words') && queries.has('target') && queries.has('grace'))) {
     document.location.index = "index.html";
   } else {
@@ -8,23 +12,25 @@ function writeOrElse() {
     let numGracePeriods = (queries.get('target') * 60) / grace;
     let wordInterval = wordGoal / numGracePeriods;
     let textbox = document.getElementById("writing-box");
-    setTimeout(1000 * grace, tracker(grace, wordInterval, 0, numGracePeriods, wordGoal));
+    let i = 0;
+    intervalId = setInterval(tracker(), grace * 1000);
   }
 }
 
-function tracker(gracePeriod, wordInterval, numPeriods, maxPeriods, wordGoal) {
+function tracker() {
   let textbox = document.getElementById("writing-box");
-  if(numPeriods * wordInterval > countWords(textbox.value)) {
+  let wordGoal = queries.get('words');
+  let grace = queries.get('grace');
+  let numGracePeriods = (queries.get('target') * 60) / grace;
+  let wordInterval = wordGoal / numGracePeriods;
+  if( min(checkNum * wordInterval, wordGoal) > countWords(textbox.value)) {
         alert("Write Faster!!!!");
         // more "punishments" can and will be added later on
-        if (numPeriods < maxPeriods) {
-          setTimeout(gracePeriod * 1000, tracker(gracePeriod, wordInterval, numPeriods + 1, maxPeriods, wordGoal));
-        } else {
-          setTimeout(gracePeriod * 1000, tracker(gracePeriod, wordInterval, maxPeriods, maxPeriods, wordGoal));
-        }
       }
   else if(countWords(textbox.value) > wordGoal)  {
       alert("You did it!");
+      clearInterval(intervalId);
+      
   }
 }
 
