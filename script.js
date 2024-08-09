@@ -23,7 +23,7 @@ function tracker() {
   let grace = queries.get('grace');
   let numGracePeriods = (queries.get('target') * 60) / grace;
   let wordInterval = wordGoal / numGracePeriods;
-  if( min(checkNum * wordInterval, wordGoal) > countWords(textbox.value)) {
+  if (Math.min(checkNum * wordInterval, wordGoal) > countWords(textbox.value)) {
         alert("Write Faster!!!!");
         // more "punishments" can and will be added later on
       }
