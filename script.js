@@ -13,7 +13,7 @@ function writeOrElse() {
     let wordInterval = wordGoal / numGracePeriods;
     let textbox = document.getElementById("writing-box");
     let i = 0;
-    intervalId = setInterval(tracker(), grace * 1000);
+    intervalId = setInterval(tracker, grace * 1000);
   }
 }
 
