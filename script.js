@@ -45,5 +45,4 @@ function countWordsChars() {
   let textbox = document.getElementById("writing-box");
   wordSpan.value = countWords(textbox.value);
   charSpan.value = textbox.value.length;
-  setTimeout(100, countWordsChars());
 }
