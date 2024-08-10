@@ -30,7 +30,7 @@
         <br>
 
         <label for="font">Font: </label>
-        <select id="font" name="font">
+        <select id="font" name="font" onchange="changeFont()">
             <option value="sans" style="font-family: sans-serif;" selected>Sans-serif</option>
             <option value="mono" style="font-family: monospace;">Monospace</option>
             <option value="comic" style="font-family: 'Comic Sans MS';">Comic Sans</option>
@@ -38,13 +38,13 @@
         </select>
         <label for="mode">Mode: </label>
         <select id="mode" name="mode">
-            <option value="sans" selected>Mild</option>
-            <option value="mono">Motivating</option>
-            <option value="comic">Severe</option>
-            <option value="serif">Fuming Parent (profanity)</option>
+            <option value="mild" selected>Mild</option>
+            <option value="motivating">Motivating</option>
+            <option value="severe">Severe</option>
+            <option value="fuming">Fuming (profanity)</option>
         </select>
         <label for="theme">Theme: </label>
-        <select id="theme" name="theme">
+        <select id="theme" name="theme" onchange="changeTheme()">
             <option value="light" selected>Light</option>
             <option value="dark">Dark</option>
             <option value="intense">Intense</option>
