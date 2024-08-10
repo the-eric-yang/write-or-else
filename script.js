@@ -46,3 +46,9 @@ function countWordsChars() {
   wordSpan.innerText = countWords(textbox.value);
   charSpan.innerText = textbox.value.length;
 }
+
+function changeTheme() {
+}
+
+function changeFont() {
+}
